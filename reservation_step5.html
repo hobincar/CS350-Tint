@@ -1,23 +1,15 @@
-
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="dist/semantic/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="dist/semantic/dist/semantic.min.js"></script>
+<script src="js/reservation.js"></script>
 <html>
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
   <!-- Site Properties -->
   <title>Reservation</title>
-    
-  <link rel="stylesheet" type="text/css" href="css/semantic.css">
-  <link rel="stylesheet" type="text/css" href="css/template.css">
-  <script href="js/semantic.js"></script>
-  <script href="js/template.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -83,38 +75,77 @@
           </div>
         </div>
       </div>
+      <div class="ui fitted divider"></div>
 
-      <div class="ui divider"></div>
-      <div>
-
-      <div class="ui items">
-        <h3 class="ui header">
-          Your Reservation
-        </h3>
-        <div class="item">
-          <div class="image">
-            <img src="https://placehold.it/60x60">
-          </div>
-          <div class="content">
-            <a class="header">Suite Room</a>
-            <div class="meta">
-              <span>Description</span>
-            </div>
-            <div class="description">
-              <p></p>
-            </div>
-            <div class="extra">
-              Additional Details
+      <div class="ui fluid green card">
+        <div class="content">
+          <div class="header"> Your Room</div>
+          <div class="meta"></div>
+          <div class="description">
+            <div class="ui grid">
+              <div class="eight wide column">
+                <div class="ui list">
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="calendar icon"></i> 2017/5/28 ~ 2017/6/1
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="hotel icon"></i> Family room
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="users icon"></i> 2 Adults, 3 Children
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="cube icon"></i> 1 Baby Bed
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="food icon"></i> 15 Breakfast
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui big blue fluid label">
+                        <i class="dollar icon"></i> 2300.00
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="ui fluid rounded image">
+                  <img src="img/family_1.jpg">
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="ui divider"></div>
 
-      <button class="ui container center aligned labeled green icon button">
+      <button class="ui container labeled green icon button" onclick="location.href = 'reservation_step1.html'">
         <i class="check icon"></i>
         Confirm
       </button>
+
     </div>
 
     <!-- Grid Margin -->
