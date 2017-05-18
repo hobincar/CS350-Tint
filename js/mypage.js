@@ -1,89 +1,44 @@
+remove_num = -1;
+
+
 $(document)
-.ready(function() {
+  .ready(function() {
+    $('.ui.dropdown').dropdown();
+    $('.ui.toggle.checkbox').checkbox('set checked');
 
-  // fix menu when passed
-  $('.masthead')
-    .visibility({
-      once: false,
-      onBottomPassed: function() {
-        $('.fixed.menu').transition('fade in');
-      },
-      onBottomPassedReverse: function() {
-        $('.fixed.menu').transition('fade out');
-      }
-    })
-  ;
+    $("div.modify-btn").on('click', () => $(".ui.modify.modal").modal('show'));
+    $("div.save-change-btn").on('click', () => $(".ui.pay.modal").modal('show'));
+    $("div.modal-close-btn").on('click', () => $(".ui.modal").modal('hide'));
+    $("div.back-to-modify-btn").on('click', () => $(".ui.modify.modal").modal('show'));
+    $("div.cancel-btn").on('click', function() {
+      remove_num = this.id.slice(6);
+      $(".ui.cancel.modal").modal('show');
+    });
+    $("div.remove-btn").on('click', () => {
+      $(`.item.item${remove_num}`).remove();
+      progressRefundModal()
+    });
 
-  // create sidebar and attach to menu open
-  $('.ui.sidebar')
-    .sidebar('attach events', '.toc.item')
-  ;
-  
-  $('.ui.dropdown')
-  .dropdown()
-  ;
+  validation_w_receipt();
 
-  var toggle  = $('.ui.toggle.button');
-  toggle
-    .state({
-      text: {
-        inactive : '<i class="left checked calendar icon"></i> Reserve this room',
-        active   : '<i class="left checked calendar icon"></i> Choose this room'
-      }
-    })
-  
+
   $('input[type=checkbox]').on('change', function(event) {
+    console.log($(this).parent().hasClass('checked'))
     if ($(this).parent().hasClass('checked'))
-      validation_step4_w_receipt();
+      validation_w_receipt();
     else {
-      validation_step4_wo_receipt();
+      validation_wo_receipt();
       $('#receipt_field').removeClass('error');
     }
   });
-
-
-  $('.ui.toggle.checkbox')
-  .checkbox('set checked')
+  
+  $('.menu .item').tab();
 ;
-  
-  $('.ui.step1.form')
-    .form({
-      fields: {
-        start_date: {
-          identifier: 'start_date',
-          rules: [
-            {
-              type: 'empty',
-              prompt: 'Please select start date'
-            }
-          ]
-        },
-        end_date: {
-          identifier: 'end_date',
-          rules: [
-            {
-              type : 'empty',
-              prompt: 'Please select start date'
-            }
-          ]
-        },
-      },
-      onSuccess: (event) => {
-        event.preventDefault();
-        location.href = 'reservation_step2.html';
-      }
-    });
-  
-    validation_step4_w_receipt()
-  
-})
-;
+});
 
-function progressModal() {
-  // show modal
-  $('.ui.small.modal')
-    .modal('show')
-  ;
+
+function progressPayModal() {
+  $('.ui.small.modal').modal('show');
 
   // progressing setting
   var
@@ -91,18 +46,17 @@ function progressModal() {
     $button         = $(this),
     updateEvent
   ;
-    // restart to zero
-  clearInterval(window.fakeProgress)
+  // restart to zero
+  clearInterval(window.fakeProgress);
   $progress.progress('reset');
-    // updates every 20ms until complete
+  // updates every 20ms until complete
   window.fakeProgress = setInterval(function() {
     $progress.progress('increment');
     $button.text( $progress.progress('get value') );
       // stop incrementing when complete
     if($progress.progress('is complete')) {
       clearInterval(window.fakeProgress)
-        // go to next page
-      window.location.href = 'reservation_step5.html'
+      $(".ui.confirm.modal").modal('show');
     }
   }, 20);
 
@@ -114,13 +68,60 @@ function progressModal() {
       text     : {
         active: '{value} of {total} done'
       }
-    })
+    });
+
+  $('.ui.form').form({
+    fields: {
+      color: {
+        identifier: 'card[number]',
+        rules: [{
+          type: 'regExp',
+          value: /\d{4}-\d{4}-\d{4}-\d{4}/i,
+        }]
+      }
+    }
+  });
+}    
+
+
+function progressRefundModal() {
+  $('.ui.small.modal').modal('show');
+
+  // progressing setting
+  var
+    $progress       = $('.ui.progress'),
+    $button         = $(this),
+    updateEvent
   ;
+  // restart to zero
+  clearInterval(window.fakeProgress);
+  $progress.progress('reset');
+  // updates every 20ms until complete
+  window.fakeProgress = setInterval(function() {
+    $progress.progress('increment');
+    $button.text( $progress.progress('get value') );
+      // stop incrementing when complete
+    if($progress.progress('is complete')) {
+      clearInterval(window.fakeProgress)
+      $(".ui.refund.modal").modal('show');
+    }
+  }, 20);
+
+  // progress bar setting
+  $('.ui.progress')
+    .progress({
+      duration : 100,
+      total    : 100,
+      text     : {
+        active: '{value} of {total} done'
+      }
+    });
 }
 
-function validation_step4_wo_receipt()
+
+function validation_wo_receipt()
 {
-  $('.ui.step4.form')
+  $('.ui.pay.form')
     .form({
       fields: {
         card_type: {
@@ -172,15 +173,15 @@ function validation_step4_wo_receipt()
       },
       onSuccess: (event) => {
         event.preventDefault();
-        progressModal();
+        progressPayModal();
       }
     });
 }
 
 
-function validation_step4_w_receipt()
+function validation_w_receipt()
 {
-  $('.ui.step4.form')
+  $('.ui.pay.form')
     .form({
       fields: {
         card_type: {
@@ -240,7 +241,7 @@ function validation_step4_w_receipt()
       },
       onSuccess: (event) => {
         event.preventDefault();
-        progressModal();
+        progressPayModal();
       }
     });
 }

@@ -10,6 +10,14 @@
 <head>
   <!-- Site Properties -->
   <title>Reservation</title>
+  <script>
+    $(document).ready(() => {
+      $("#next_btn").on('click', (event) => {
+        if ($(".button.active").length > 0)
+          location.href = 'reservation_step3.html';
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -230,11 +238,11 @@
 
       <div class="ui divider"></div>
 
-      <button class="ui left floated labeled red icon negative button" onclick = "location.href = 'reservation_step1.html'">
+      <button class="ui left floated labeled red icon negative button" onclick="window.location.href='reservation_step1.html'">
         <i class="left arrow icon"></i>
         Previous
       </button>
-      <button class="ui right floated right labeled icon positive button" onclick = "location.href = 'reservation_step3.html'">
+      <button id="next_btn" class="ui right floated right labeled icon positive button">
         <i class="right arrow icon"></i>
         Next
       </button>

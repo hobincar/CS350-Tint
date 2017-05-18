@@ -9,17 +9,16 @@
   <!-- Site Properties -->
   <title>Homepage - Semantic</title>
     
-  <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.css">
+  <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/template.css">
   <link rel="stylesheet" type="text/css" href="css/signup.css">
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
-  <script href="semantic-ui/semantic.js"></script>
-  <script href="js/template.js"></script>
-  <script href="js/signup.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
+  <script src="semantic-ui/semantic.min.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/signup.js"></script>
   <script>
     function validate_email(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,36 +34,63 @@
       $('#email').on('keyup', function() {
 //        console.log(this.value, validate_email(this.value));
         let is_valid = validate_email(this.value)
-        if (is_valid)
+        if (is_valid) {
           $(".email.error").hide();
-        else
+          $("#email_field").removeClass("error");
+        }
+        else {
           $(".email.error").text("Not a valid email format").show();
+          $("#email_field").addClass("error");
+        }
       });
     
-      $('#passward1').on('keyup', function() {
+      $('#password1').on('keyup', function() {
 //        console.log(this.value);
-        if (this.value.length < 8)
-          $(".passward1.error").text("Passward should be longer than 7 characters").show();
-        else
-          $(".passward1.error").hide();
+        if (this.value.length < 8) {
+          $(".password1.error").text("password should be longer than 7 characters").show();
+          $("#password1_field").addClass("error");
+        }
+        else {
+          $(".password1.error").hide();
+          $("#password1_field").removeClass("error");
+        }
       });
     
-    $('#passward2').on('keyup', function() {
+    $('#password2').on('keyup', function() {
 //      console.log(this.value);
-      if (this.value != $('#passward1').val())
-        $(".passward2.error").text("Passwards should be same").show();
-      else
-        $(".passward2.error").hide();
+      if (this.value != $('#password1').val()) {
+        $(".password2.error").text("passwords should be same").show();
+        $("#password2_field").addClass("error");
+      }
+      else {
+        $(".password2.error").hide();
+        $("#password2_field").removeClass("error");
+      }
     });
     
     $('#phone_number').on('keyup', function() {
 //      console.log(this.value);
       let is_valid = validate_phone_number(this.value);
-      if (is_valid)
+      if (is_valid) {
         $(".phone_number.error").hide();
-      else
+        $("#phone_number_field").removeClass("error");
+      }
+      else {
         $(".phone_number.error").text("Not a valid phone number format").show();
+        $("#phone_number_field").addClass("error");
+      }
     });
+    
+    $('#submit_btn').on('click', function() {
+      if (validate_email($('#email').val())
+         && ($('#password1').val().length >= 8)
+         && ($('#password1').val() == $('#password2').val())
+         && validate_phone_number($('#phone_number').val())) {
+        $('.ui.signup-complete.modal').modal('show');
+      } else {
+        alert('Please fill all the fields correctly');
+      }
+    })
   });
   </script>
 </head>
@@ -102,46 +128,59 @@
     </h2>
     <form class="ui large form">
       <div class="ui stacked segment">
-        <div class="field">
+        <div id="email_field" class="field">
           <div class="ui left icon input">
             <i class="mail icon"></i>
             <input id="email" class="ui" type="text" name="email" placeholder="E-mail address">
           </div>
           <div class="ui email error hide"></div>
         </div>
-        <div class="field">
+        <div id="password1_field" class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input id="passward1" type="password" name="password1" placeholder="Password">
+            <input id="password1" type="password" name="password1" placeholder="Password">
           </div>
-          <div class="ui passward1 error hide"></div>
+          <div class="ui password1 error hide"></div>
         </div>
-        <div class="field">
+        <div id="password2_field" class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input id="passward2" type="password" name="password2" placeholder="Password again">
+            <input id="password2" type="password" name="password2" placeholder="Password again">
           </div>
-          <div class="ui passward2 error hide"></div>
+          <div class="ui password2 error hide"></div>
         </div>
-        <div class="field">
+        <div id="name_field" class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
             <input class="ui" type="text" name="name" placeholder="Name">
           </div>
         </div>
-        <div class="field">
+        <div id="phone_number_field" class="field">
           <div class="ui left icon input">
             <i class="mobile icon"></i>
             <input id="phone_number" class="ui" type="text" name="phone-number" placeholder="Phone number     e.g. 010-1010-1010">
           </div>
           <div class="ui phone_number error hide"></div>
         </div>
-        <div class="ui fluid large teal submit button">Sign up</div>
+        <input id="submit_btn" type="submit" value="Sign up" class="ui fluid large teal submit button"/>
       </div>
       <div class="ui error message"></div>
     </form>
   </div>
 </div>
+
+<!-- Signup Complete Modal -->
+<div class="ui signup-complete modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Registered Successfully! Do you want to login?
+  </div>
+  <div class="actions">
+    <a href="login.html" class="ui blue button">Yes, go to login page</a>
+    <a href="index.html" class="ui red button">No, go to main page</a>
+  </div>
+</div>
+  
 </body>
 
 </html>

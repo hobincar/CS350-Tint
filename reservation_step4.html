@@ -140,9 +140,9 @@
 
       <div class="ui divider"></div>
 
-      <form class="ui payment form">
+      <form class="ui step4 form segment">
         <h4 class="ui dividing header">Billing Information</h4>
-        <div class="field">
+        <div class="field required">
           <label>Card Type</label>
           <div class="ui selection dropdown">
             <input type="hidden" name="card[type]">
@@ -165,15 +165,15 @@
           </div>
         </div>
         <div class="fields">
-          <div class="seven wide field">
+          <div class="seven wide field required">
             <label>Card Number</label>
             <input type="number" name="card[number]" maxlength="16" placeholder="Card #">
           </div>
-          <div class="three wide field">
+          <div class="three wide field required">
             <label>CVC</label>
             <input type="number" name="card[cvc]" maxlength="3" placeholder="CVC">
           </div>
-          <div class="six wide field">
+          <div class="six wide field required">
             <label>Expiration</label>
             <div class="two fields">
               <div class="field">
@@ -193,14 +193,14 @@
                   <option value="12">December</option>
                 </select>
               </div>
-              <div class="field">
+              <div class="field required">
                 <input type="number" name="card[expire-year]" maxlength="4" placeholder="Year">
               </div>
             </div>
           </div>
         </div>
          <h4 class="ui dividing header">Receipt</h4>
-         <div class="field">
+         <div id="receipt_field" class="field">
           <label>Send Receipt To:</label>
           <div class="ui fluid multiple search selection dropdown">
             <input type="hidden" name="receipt">
@@ -224,25 +224,11 @@
             </div>
           </div>
         </div>
-        <div class="ui positive fluid button" id="payment_button" tabindex="0">
+        <div class="ui positive submit fluid button" id="payment_button" tabindex="0">
           Pay for $2557.50
         </div>
         <div class="ui error message"></div>
       </form>
-      <script type="text/javascript">
-        $('ui.payment.form')
-        .form({
-          fields: {
-            card[number]     : 'empty',
-            gender   : 'empty',
-            username : 'empty',
-            password : ['minLength[6]', 'empty'],
-            skills   : ['minCount[2]', 'empty'],
-            terms    : 'checked'
-          }
-        })
-      ;
-      </script>
 
       <div class="ui divider"></div>
 
@@ -264,11 +250,6 @@
         <div class="ui indicating progress">
           <div class="bar"></div>
         </div>
-        </div>
-      </div>
-      <div class="actions">
-        <div class="ui negative deny button">
-          Cancel
         </div>
       </div>
     </div>

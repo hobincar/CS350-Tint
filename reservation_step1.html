@@ -76,7 +76,7 @@
       </div>
       <div class="ui fitted divider"></div>
 
-      <div class="ui form segment">
+      <div class="ui step1 form segment">
         <div class="two fields">
           <div class="field">
             <label>When will you check in?</label>
@@ -85,7 +85,7 @@
                 <i class="calendar icon"></i>
                 Check In
               </div>
-              <input type="date" placeholder="mysite.com">
+              <input type="date" name="start_date">
             </div>
           </div>
           <div class="field">
@@ -95,7 +95,7 @@
                 <i class="calendar icon"></i>
                 Check Out
               </div>
-              <input type="date" placeholder="mysite.com">
+              <input type="date" name="end_date">
             </div>
           </div>
         </div>
@@ -157,6 +157,11 @@
             </div>
           </div>
         </div>
+        <div class="ui right floated right labeled blue icon submit button" style="margin-top:30px">
+          <i class="right arrow icon"></i>
+          Next
+        </div>
+    </div>
       </div>
 
       <div class="ui divider"></div>
@@ -165,11 +170,7 @@
         <i class="left arrow icon"></i>
         Previous
       </button> -->
-      <button class="ui right floated right labeled blue icon button" onclick = "location.href = 'reservation_step2.html' ">
-        <i class="right arrow icon"></i>
-        Next
-      </button>
-    </div>
+      
 
     <!-- Grid Margin -->
     <div class="two wide column">
