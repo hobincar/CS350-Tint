@@ -8,206 +8,207 @@
 
   <!-- Site Properties -->
   <title>Homepage - Semantic</title>
-    
+
   <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/template.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
-
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT Serif">
   <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-<script src="semantic-ui/semantic.min.js"></script>
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="semantic-ui/semantic.min.js"></script>
   <script href="js/template.js"></script>
-
-
-
   <script>
-  $(document)
+    $(document)
     .ready(function() {
 
       // fix menu when passed
       $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
+      .visibility({
+        once: false,
+        onBottomPassed: function() {
+          $('.fixed.menu').transition('fade in');
+        },
+        onBottomPassedReverse: function() {
+          $('.fixed.menu').transition('fade out');
+        }
+      })
       ;
       $('.ui .dropdown').dropdown();
       // create sidebar and attach to menu open
       $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
+      .sidebar('attach events', '.toc.item')
       ;
 
+      // active bar change
+      $('.item').on('click', function() {
+        console.log('a')
+        $('.item').siblings().removeClass('active');
+        $(this).addClass('active');
+        console.log($(this).text());
+      });
+
     })
-  ;
+    ;
   </script>
 </head>
 <body class="pushable">
 
-<!-- Following Menu -->
-<div class="ui large top fixed menu transition hidden" style="display: flex !important;">
-  <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Work</a>
-    <a class="item">Company</a>
-    <a class="item">Careers</a>
-    <div class="right menu">
-      <div class="item">
-        <a class="ui button">Log in</a>
-      </div>
-      <div class="item">
-        <a class="ui primary button">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment top" >
+  <!-- Following Menu -->
+  <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
     <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <div class="right item">
-          <a class="ui inverted button">Log in</a>
-          <a class="ui inverted button">Sign Up</a>
+      <a class="active item" href="#">Home</a>
+      <a class="item" href="reservation_step1.html">Reservation</a>
+      <a class="item" href="#information">Information</a>
+      <div class="right menu">
+        <div class="item">
+          <a class="ui button">Log in</a>
+        </div>
+        <div class="item">
+          <a class="ui primary button">Sign Up</a>
         </div>
       </div>
     </div>
-
-
-
-
   </div>
+
+  <!-- Page Contents -->
+  <div class="pusher">
+
+    <div class="ui inverted vertical masthead center aligned segment top" >
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item" href="#">Home</a>
+          <a class="item" href="reservation_step1.html">Reservation</a>
+          <a class="item" href="#information">Information</a>
+          <div class="right item">
+            <a class="ui inverted button" href="login.html">Log in</a>
+            <a class="ui inverted button" href="signup.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     
     <div class="ui vertical stripe center text" style="background-image: url('./img/background.jpg');
-                                height: 600px;
-                                background-position: center top;
-                                background-size: 100% auto;" >
-      <h1 class="ui center aligned grid inverted header" style="font-size: 50px;">
-        CS350-HOTEL
-      </h1>
+    height: 600px;
+    background-position: center top;
+    background-size: 100% auto;" >
+    <h1 class="ui center aligned grid inverted header" style="font-size: 50px; font-family: 'PT Serif', serif;">
+      Team TINT
+      <br>
+      HOTEL RESERVATION SYSTEM
+    </h1>
+  </div>
+
+
+  <div class="ui vertical segment">
+
+    <div class="ui middle aligned stackable equal height grid container">
+      <div class="fourteen wide column">
+        <div class="wide ui form segment column">
+          <div class="two fields">
+            <div class="field">
+              <label>When will you check in?</label>
+              <div class="ui labeled input">
+                <div class="ui green label">
+                  <i class="calendar icon"></i>
+                  Check In
+                </div>
+                <input type="date" placeholder="mysite.com">
+              </div>
+            </div>
+            <div class="field">
+              <label>When will you check out?</label>
+              <div class="ui labeled input">
+                <div class="ui green label">
+                  <i class="calendar icon"></i>
+                  Check Out
+                </div>
+                <input type="date" placeholder="mysite.com">
+              </div>
+            </div>
+          </div>
+          <div class="four fields">
+            <div class="three wide field">
+              <label>How many Rooms? (-3)</label>
+              <!-- <input placeholder="Up to 5" type="number"> -->
+              <div class="ui floating dropdown labeled search icon fluid button">
+                <i class="cubes icon"></i>
+                <span class="text"> Rooms </span>
+                <div class="menu">
+                  <div class="item">1 Room</div>
+                  <div class="item">2 Rooms</div>
+                  <div class="item">3 Rooms</div>
+                </div>
+              </div>
+            </div>
+            <div class="four wide field">
+              <label>How many Adults? (18+)</label>
+              <div class="ui floating dropdown labeled search icon fluid button">
+                <i class="users icon"></i>
+                <span class="text"> Adults </span>
+                <div class="menu">
+                  <div class="item">1 Adult</div>
+                  <div class="item">2 Adults</div>
+                  <div class="item">3 Adults</div>
+                  <div class="item">4 Adults</div>
+                  <div class="item">5 Adults</div>
+                  <div class="item">6 Adults</div>
+                </div>
+              </div>
+            </div>
+            <div class="four wide field">
+              <label>How many Children?  (-17)</label>
+              <div class="ui floating dropdown labeled search icon fluid button">
+                <i class="child icon"></i>
+                <span class="text"> Children </span>
+                <div class="menu">
+                  <div class="item">1 Child</div>
+                  <div class="item">2 Children</div>
+                  <div class="item">3 Children</div>
+                  <div class="item">4 Children</div>
+                  <div class="item">5 Children</div>
+                  <div class="item">6 Children</div>
+                  <div class="item">7 Children</div>
+                  <div class="item">8 Children</div>
+                  <div class="item">9 Children</div>
+                </div>
+              </div>
+            </div>
+            <div class="five wide field">
+              <label>Will you use a coupon? (optional)</label>
+              <div class="ui floating dropdown labeled search icon fluid button">
+                <i class="money icon"></i>
+                <span class="text"> Your Coupons </span>
+                <div class="menu">
+                  <div class="item">20% Discount Coupon</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="two wide stretched column" >
+        <button class="ui right blue fluid button" onclick = "location.href = 'reservation_step2.html' ">
+          Reserve
+        </button>
+      </div>
     </div>
 
-
-    <div class="ui vertical segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="row">
-      <div class="wide ui form segment column">
-        <div class="two fields">
-          <div class="field">
-            <label>When will you check in?</label>
-            <div class="ui labeled input">
-              <div class="ui green label">
-                <i class="calendar icon"></i>
-                Check In
-              </div>
-              <input type="date" placeholder="mysite.com">
-            </div>
-          </div>
-          <div class="field">
-            <label>When will you check out?</label>
-            <div class="ui labeled input">
-              <div class="ui green label">
-                <i class="calendar icon"></i>
-                Check Out
-              </div>
-              <input type="date" placeholder="mysite.com">
-            </div>
-          </div>
-        </div>
-        <div class="four fields">
-          <div class="three wide field">
-            <label>How many Rooms? (-3)</label>
-            <!-- <input placeholder="Up to 5" type="number"> -->
-            <div class="ui floating dropdown labeled search icon fluid button">
-              <i class="cubes icon"></i>
-              <span class="text"> Rooms </span>
-              <div class="menu">
-                <div class="item">1 Room</div>
-                <div class="item">2 Rooms</div>
-                <div class="item">3 Rooms</div>
-              </div>
-            </div>
-          </div>
-          <div class="four wide field">
-            <label>How many Adults? (18+)</label>
-            <div class="ui floating dropdown labeled search icon fluid button">
-              <i class="users icon"></i>
-              <span class="text"> Adults </span>
-              <div class="menu">
-                <div class="item">1 Adult</div>
-                <div class="item">2 Adults</div>
-                <div class="item">3 Adults</div>
-                <div class="item">4 Adults</div>
-                <div class="item">5 Adults</div>
-                <div class="item">6 Adults</div>
-              </div>
-            </div>
-          </div>
-          <div class="four wide field">
-            <label>How many Children?  (-17)</label>
-            <div class="ui floating dropdown labeled search icon fluid button">
-              <i class="child icon"></i>
-              <span class="text"> Children </span>
-              <div class="menu">
-                <div class="item">1 Child</div>
-                <div class="item">2 Children</div>
-                <div class="item">3 Children</div>
-                <div class="item">4 Children</div>
-                <div class="item">5 Children</div>
-                <div class="item">6 Children</div>
-                <div class="item">7 Children</div>
-                <div class="item">8 Children</div>
-                <div class="item">9 Children</div>
-              </div>
-            </div>
-          </div>
-          <div class="five wide field">
-            <label>Will you use a coupon? (optional)</label>
-            <div class="ui floating dropdown labeled search icon fluid button">
-              <i class="money icon"></i>
-              <span class="text"> Your Coupons </span>
-              <div class="menu">
-                <div class="item">20% Discount Coupon</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        </div>
-        </div>
-      <button class="ui right floated right labeled blue icon button" onclick = "location.href = 'reservation_step2.html' ">
-        <i class="right arrow icon"></i>
-        Next
-      </button>
-        </div>
-        
-        </div>
+  </div>
 
 
 
 
 
 
-  <div class="ui vertical stripe segment">
+  <div class="ui vertical stripe segment" id='information'>
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <h1 class="ui header" id="RoomInformation">"Room Information"</h1>
@@ -294,7 +295,7 @@
       </div>
     </div>
   </div>
-    </div>
+</div>
 
 
 
