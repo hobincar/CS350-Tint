@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
 <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+src="https://code.jquery.com/jquery-3.1.1.min.js"
+integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+crossorigin="anonymous"></script>
 <script src="semantic-ui/semantic.min.js"></script>
 <script src="js/reservation.js"></script>
 <html>
@@ -13,102 +13,101 @@
 </head>
 <body>
 
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <div class="right item">
-          <a class="ui inverted button">Log in</a>
-          <a class="ui inverted button">Sign Up</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Body Start -->
-  <div class="ui grid">
-
-    <!-- Grid Margin -->
-    <div class="two wide column">
-    </div>
-
-    <!-- Input Forms -->
-    <div class="twelve wide column">
-
-      <div class="ui divider"></div>
-      <h1 class="ui header">
-        Reservation
-      </h1>
-      <div class="ui container center aligned ordered steps">
-        <div class="completed step">
-          <div class="content">
-            <div class="title">Enter Information</div>
-            <div class="description"></div>
-          </div>
-        </div>
-        <div class="completed step">
-          <div class="content">
-            <div class="title">Choose Rooms</div>
-            <div class="description"></div>
-          </div>
-        </div>
-        <div class="active step">
-          <div class="content">
-            <div class="title">Select Options</div>
-            <div class="description"></div>
-          </div>
-        </div>
-        <div class="disable step">
-          <div class="content">
-            <div class="title">Billing</div>
-            <div class="description"></div>
+  <!-- Page Contents -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment top" >
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item">Home</a>
+          <a class="item" href="reservation_step1.html">Reservation</a>
+          <a class="item" href="#information">Information</a>
+          <div class="right item">
+            <a class="ui inverted button" href="mypage.html">My Page</a>
+            <a class="ui inverted button" href="index.html">Log Out</a>
           </div>
         </div>
       </div>
-      <div class="ui fitted divider"></div>
+    </div>
 
-      <div class="ui fluid green card">
-        <div class="content">
-          <div class="header"> Your Room</div>
-          <div class="meta"></div>
-          <div class="description">
-            <div class="ui grid">
-              <div class="ten wide column">
-                <div class="ui list">
-                  <div class="item">
-                    <div class="content">
-                      <div class="ui fluid label">
-                        <i class="calendar icon"></i> 2017/5/28 ~ 2017/6/1
+    <!-- Body Start -->
+    <div class="ui grid">
+
+      <!-- Grid Margin -->
+      <div class="two wide column">
+      </div>
+
+      <!-- Input Forms -->
+      <div class="twelve wide column">
+
+        <div class="ui divider"></div>
+        <h1 class="ui header">
+          Reservation
+        </h1>
+        <div class="ui container center aligned ordered steps">
+          <div class="completed step">
+            <div class="content">
+              <div class="title">Enter Information</div>
+              <div class="description"></div>
+            </div>
+          </div>
+          <div class="completed step">
+            <div class="content">
+              <div class="title">Choose Rooms</div>
+              <div class="description"></div>
+            </div>
+          </div>
+          <div class="active step">
+            <div class="content">
+              <div class="title">Select Options</div>
+              <div class="description"></div>
+            </div>
+          </div>
+          <div class="disable step">
+            <div class="content">
+              <div class="title">Billing</div>
+              <div class="description"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui fitted divider"></div>
+
+        <div class="ui fluid green card">
+          <div class="content">
+            <div class="header"> Your Room</div>
+            <div class="meta"></div>
+            <div class="description">
+              <div class="ui grid">
+                <div class="ten wide column">
+                  <div class="ui list">
+                    <div class="item">
+                      <div class="content">
+                        <div class="ui fluid label">
+                          <i class="calendar icon"></i> 2017/5/28 ~ 2017/6/1
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="item">
-                    <div class="content">
-                      <div class="ui fluid label">
-                        <i class="hotel icon"></i> Family room
+                    <div class="item">
+                      <div class="content">
+                        <div class="ui fluid label">
+                          <i class="hotel icon"></i> Family room
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="item">
-                    <div class="content">
-                      <div class="ui fluid label">
-                        <i class="users icon"></i> 2 Adults, 3 Children
+                    <div class="item">
+                      <div class="content">
+                        <div class="ui fluid label">
+                          <i class="users icon"></i> 2 Adults, 3 Children
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="item">
-                    <div class="content">
-                      <div class="ui big blue fluid label">
-                        <i class="dollar icon"></i> 2300.00
+                    <div class="item">
+                      <div class="content">
+                        <div class="ui big blue fluid label">
+                          <i class="dollar icon"></i> 2300.00
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -122,61 +121,60 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="ui divider"></div>
+        <div class="ui divider"></div>
 
-      <div class="ui form segment">
-        <div class="two fields">
-          <div class="eight wide field">
-            <label>Will you have a Breakfast? (each $16.50)</label>
-            <div class="ui labeled fluid input">
-              <div class="ui label">
-                <i class="food icon"></i>
-                Breakfast
-              </div>
-              <input type="number" placeholder="">
-            </div>
-          </div>
-          <div class="eight wide field">
-            <label>Will you need a Baby Bed? (each $10.00)</label>
-            <div class="ui floating dropdown labeled search icon fluid button">
-              <i class="cubes icon"></i>
-              <span class="text"> Baby Bed (up to 3) </span>
-              <div class="menu">
-                <div class="item">1</div>
-                <div class="item">2</div>
-                <div class="item">3</div>
+        <div class="ui form segment">
+          <div class="two fields">
+            <div class="eight wide field">
+              <label>Will you have a Breakfast? (each $16.50)</label>
+              <div class="ui labeled fluid input">
+                <div class="ui label">
+                  <i class="food icon"></i>
+                  Breakfast
+                </div>
+                <input type="number" placeholder="">
               </div>
             </div>
+            <div class="eight wide field">
+              <label>Will you need a Baby Bed? (each $10.00)</label>
+              <div class="ui floating dropdown labeled search icon fluid button">
+                <i class="cubes icon"></i>
+                <span class="text"> Baby Bed (up to 3) </span>
+                <div class="menu">
+                  <div class="item">1</div>
+                  <div class="item">2</div>
+                  <div class="item">3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Additional Text</label>
+            <textarea rows="2"> If you want, we will help you. </textarea>
           </div>
         </div>
-        <div class="field">
-          <label>Additional Text</label>
-          <textarea rows="2"> If you want, we will help you. </textarea>
-        </div>
+
+
+        <div class="ui divider"></div>
+
+        <button class="ui left floated labeled red icon button" onclick = "location.href = 'reservation_step2.html'">
+          <i class="left arrow icon"></i>
+          Previous
+        </button>
+        <button class="ui right floated right labeled blue icon button" onclick = "location.href = 'reservation_step4.html'">
+          <i class="right arrow icon"></i>
+          Next
+        </button>
       </div>
 
+      <!-- Grid Margin -->
+      <div class="two wide column">
+      </div>
 
-      <div class="ui divider"></div>
-
-      <button class="ui left floated labeled red icon button" onclick = "location.href = 'reservation_step2.html'">
-        <i class="left arrow icon"></i>
-        Previous
-      </button>
-      <button class="ui right floated right labeled blue icon button" onclick = "location.href = 'reservation_step4.html'">
-        <i class="right arrow icon"></i>
-        Next
-      </button>
-    </div>
-
-    <!-- Grid Margin -->
-    <div class="two wide column">
     </div>
 
   </div>
-
-</div>
 
 </body>
 

@@ -9,41 +9,40 @@
 
   <!-- Site Properties -->
   <title>Homepage - Semantic</title>
-    
+  
   <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/template.css">
   <link rel="stylesheet" type="text/css" href="css/mypage.css">
   <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
   <script src="semantic-ui/semantic.min.js"></script>
   <script src="js/template.js"></script>
   <script src="js/mypage.js"></script>
 </head>
 <body>
 
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <div class="right item">
-          <a class="ui inverted button" href="login.html">Log in</a>
-          <a class="ui inverted button" href="signup.html">Sign Up</a>
+  <!-- Page Contents -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment top" >
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="active item">Home</a>
+          <a class="item" href="reservation_step1.html">Reservation</a>
+          <a class="item" href="#information">Information</a>
+          <div class="right item">
+            <a class="ui inverted button" href="mypage.html">My Page</a>
+            <a class="ui inverted button" href="index.html">Log Out</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 <div class="ui hidden divider"></div>
 <div class="ui grid">
   <div class="two wide column"></div>
@@ -160,13 +159,14 @@
                   <span>Modify</span>
                   <i class="right chevron icon"></i>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     
-    <div class="ui bottom attached tab segment" data-tab="second">
+      <div class="ui bottom attached tab segment" data-tab="second">
       <form class="ui large form">
       <div class="ui stacked segment">
         <div id="email_field" class="field">
@@ -200,6 +200,7 @@
           <div class="ui left icon input">
             <i class="mobile icon"></i>
             <input id="phone_number" class="ui" type="text" name="phone-number" placeholder="Phone number     e.g. 010-1010-1010">
+
           </div>
           <div class="ui phone_number error hide"></div>
         </div>
@@ -208,20 +209,19 @@
       <div class="ui error message"></div>
     </form>
     </div>
+    </div>
+    <div class="two wide column"></div>
   </div>
-  
-  
-  
   <div class="two wide column"></div>
 </div>
 
   
   
-<!-- Modify Modal -->
-<div class="ui modify modal">
-  <div class="header">Modify Your Reservation</div>  
-  <div class="content">
-    <div class="ui form segment">
+  <!-- Modify Modal -->
+  <div class="ui modify modal">
+    <div class="header">Modify Your Reservation</div>  
+    <div class="content">
+      <div class="ui form segment">
         <div class="two fields">
           <div class="field">
             <label>When will you check in?</label>
@@ -305,85 +305,85 @@
         </div>
       </div>
       <div class="ui form segment">
-          <div class="two fields">
-            <div class="eight wide field">
-              <label>Will you have a Breakfast? (each $16.50)</label>
-              <div class="ui labeled fluid input">
-                <div class="ui label">
-                  <i class="food icon"></i>
-                  Breakfast
-                </div>
-                <input type="number" placeholder="" value=4>
+        <div class="two fields">
+          <div class="eight wide field">
+            <label>Will you have a Breakfast? (each $16.50)</label>
+            <div class="ui labeled fluid input">
+              <div class="ui label">
+                <i class="food icon"></i>
+                Breakfast
               </div>
-            </div>
-            <div class="eight wide field">
-              <label>Will you need a Baby Bed? (each $10.00)</label>
-              <div class="ui floating dropdown labeled search icon fluid button">
-                <i class="cubes icon"></i>
-                <span class="text"> 0 </span>
-                <div class="menu">
-                  <div class="item">0</div>
-                  <div class="item">1</div>
-                  <div class="item">2</div>
-                  <div class="item">3</div>
-                </div>
-              </div>
+              <input type="number" placeholder="" value=4>
             </div>
           </div>
-          <div class="field">
-            <label>Additional Text</label>
-            <textarea rows="2" placeholder="If you want, we will help you."></textarea>
+          <div class="eight wide field">
+            <label>Will you need a Baby Bed? (each $10.00)</label>
+            <div class="ui floating dropdown labeled search icon fluid button">
+              <i class="cubes icon"></i>
+              <span class="text"> 0 </span>
+              <div class="menu">
+                <div class="item">0</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="field">
+          <label>Additional Text</label>
+          <textarea rows="2" placeholder="If you want, we will help you."></textarea>
+        </div>
+      </div>
       <div class="ui segment">
-            <div class="image">
-              <img class="ui rounded image" src="img/Deluxe_1.jpg">
-            </div>
-            <div class="content">
-              <a class="header">Deluxe Room</a>
-              <div class="meta">
-                <span class="price">
-                  <i class="dollar icon"></i>
-                  350.00 per night
-                </span>
-              </div>
-              <div class="description">
-                <p>Your dream escape awaits at Singapore’s most iconic luxury hotel. The Deluxe Room welcomes you with plush, gold-and-earth toned furnishings and abundant natural light from floor-to-ceiling windows.</p>
-                <div class="ui list">
-                  <div class="item">
-                    <i class="info icon"></i>
-                    <div class="content">
-                      39 square metres
-                    </div>
-                  </div>
-                  <div class="item">
-                    <i class="info icon"></i>
-                    <div class="content">
-                      Spacious bathroom with glass-enclosed shower
-                    </div>
-                  </div>
+        <div class="image">
+          <img class="ui rounded image" src="img/Deluxe_1.jpg">
+        </div>
+        <div class="content">
+          <a class="header">Deluxe Room</a>
+          <div class="meta">
+            <span class="price">
+              <i class="dollar icon"></i>
+              350.00 per night
+            </span>
+          </div>
+          <div class="description">
+            <p>Your dream escape awaits at Singapore’s most iconic luxury hotel. The Deluxe Room welcomes you with plush, gold-and-earth toned furnishings and abundant natural light from floor-to-ceiling windows.</p>
+            <div class="ui list">
+              <div class="item">
+                <i class="info icon"></i>
+                <div class="content">
+                  39 square metres
                 </div>
               </div>
-              <div class="extra">
-                <div class="ui label"><i class="gift icon"></i> Promotion</div>
-                <div class="ui label"><i class="certificate icon"></i> Recommended</div>
+              <div class="item">
+                <i class="info icon"></i>
+                <div class="content">
+                  Spacious bathroom with glass-enclosed shower
+                </div>
               </div>
             </div>
+          </div>
+          <div class="extra">
+            <div class="ui label"><i class="gift icon"></i> Promotion</div>
+            <div class="ui label"><i class="certificate icon"></i> Recommended</div>
+          </div>
+        </div>
       </div>
-    <div class="actions">
-      <div class="ui button yellow save-change-btn" tabindex="0">Save &amp; Pay</div>
-      <div class="ui button red modal-close-btn" tabindex="1">Cancel</div>
+      <div class="actions">
+        <div class="ui button yellow save-change-btn" tabindex="0">Save &amp; Pay</div>
+        <div class="ui button red modal-close-btn" tabindex="1">Cancel</div>
+      </div>
     </div>
   </div>
-</div>
   
   
   
-<!-- Pay Modal -->
-<div class="ui pay modal">
-  <div class="header">Check &amp; Pay Your Reservation</div>
-  <div class="content">
-    <div class="ui fluid green card">
+  <!-- Pay Modal -->
+  <div class="ui pay modal">
+    <div class="header">Check &amp; Pay Your Reservation</div>
+    <div class="content">
+      <div class="ui fluid green card">
         <div class="content">
           <div class="header">Your Room</div>
           <div class="meta"></div>
@@ -456,72 +456,72 @@
             <input type="text" name="shipping[last-name]" placeholder="Last Name">
           </div>
         </div>
-      </div>
-      <div class="field">
-        <label>Billing Address</label>
+        <div class="field">
+          <label>Billing Address</label>
+          <div class="fields">
+            <div class="twelve wide field">
+              <input type="text" name="shipping[address]" placeholder="Street Address">
+            </div>
+            <div class="four wide field">
+              <input type="text" name="shipping[address-2]" placeholder="Apt #">
+            </div>
+          </div>
+        </div>
+        <h4 class="ui dividing header">Billing Information</h4>
+        <div class="field">
+          <label>Card Type</label>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="card[type]">
+            <div class="default text">Type</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" data-value="visa">
+                <i class="visa icon"></i>
+                Visa
+              </div>
+              <div class="item" data-value="amex">
+                <i class="amex icon"></i>
+                American Express
+              </div>
+              <div class="item" data-value="discover">
+                <i class="discover icon"></i>
+                Discover
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="fields">
-          <div class="twelve wide field">
-            <input type="text" name="shipping[address]" placeholder="Street Address">
+          <div class="seven wide field">
+            <label>Card Number</label>
+            <input type="text" name="card[number]" maxlength="16" placeholder="Card #">
           </div>
-          <div class="four wide field">
-            <input type="text" name="shipping[address-2]" placeholder="Apt #">
+          <div class="three wide field">
+            <label>CVC</label>
+            <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC">
           </div>
-        </div>
-      </div>
-      <h4 class="ui dividing header">Billing Information</h4>
-      <div class="field">
-        <label>Card Type</label>
-        <div class="ui selection dropdown">
-          <input type="hidden" name="card[type]">
-          <div class="default text">Type</div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item" data-value="visa">
-              <i class="visa icon"></i>
-              Visa
-            </div>
-            <div class="item" data-value="amex">
-              <i class="amex icon"></i>
-              American Express
-            </div>
-            <div class="item" data-value="discover">
-              <i class="discover icon"></i>
-              Discover
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="fields">
-        <div class="seven wide field">
-          <label>Card Number</label>
-          <input type="text" name="card[number]" maxlength="16" placeholder="Card #">
-        </div>
-        <div class="three wide field">
-          <label>CVC</label>
-          <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC">
-        </div>
-        <div class="six wide field">
-          <label>Expiration</label>
-          <div class="two fields">
-            <div class="field">
-              <select class="ui fluid search dropdown" name="card[expire-month]">
-                <option value="">Month</option>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-            </div>
-            <div class="field">
-              <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year">
+          <div class="six wide field">
+            <label>Expiration</label>
+            <div class="two fields">
+              <div class="field">
+                <select class="ui fluid search dropdown" name="card[expire-month]">
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+              <div class="field">
+                <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year">
+              </div>
             </div>
           </div>
         </div>
@@ -539,17 +539,19 @@
             </div>
             <div class="item" data-value="E-mail" data-text="E-mail">
               E-mail
+
             </div>
           </div>
         </div>
-      </div>
-      <div class="ui segment">
-        <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" name="gift" tabindex="0" class="hidden">
-            <label>I will receive reservation reminders the day before check-in</label>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" name="gift" tabindex="0" class="hidden">
+              <label>I will receive reservation reminders the day before check-in</label>
+            </div>
           </div>
         </div>
+
       </div>
       <input type="submit" value="Pay for $2557.50" class="ui positive fluid button" id="payment_button" tabindex="0"/>
       <div class="ui error message"></div>
@@ -557,85 +559,85 @@
       <div class="ui button blue back-to-modify-btn" tabindex="0">Back to Modify</div>
       <div class="ui button red modal-close-btn" tabindex="1">Cancel</div>
     </form>
+
   </div>
-</div>
 
   
   
-<!-- Confirm Modal -->
-<div class="ui confirm modal">
-  <div class="header">Confirm Your Reservation</div>
-  <div class="content">
-    <div class="ui fluid green card">
-      <div class="content">
-        <div class="header"> Your Room</div>
-        <div class="meta"></div>
-        <div class="description">
-          <div class="ui grid">
-            <div class="eight wide column">
-              <div class="ui list">
-                <div class="item">
-                  <div class="content">
-                    <div class="ui fluid label">
-                      <i class="calendar icon"></i> 2017/5/28 ~ 2017/6/1
+  <!-- Confirm Modal -->
+  <div class="ui confirm modal">
+    <div class="header">Confirm Your Reservation</div>
+    <div class="content">
+      <div class="ui fluid green card">
+        <div class="content">
+          <div class="header"> Your Room</div>
+          <div class="meta"></div>
+          <div class="description">
+            <div class="ui grid">
+              <div class="eight wide column">
+                <div class="ui list">
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="calendar icon"></i> 2017/5/28 ~ 2017/6/1
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <div class="content">
-                    <div class="ui fluid label">
-                      <i class="hotel icon"></i> Family room
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="hotel icon"></i> Family room
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <div class="content">
-                    <div class="ui fluid label">
-                      <i class="users icon"></i> 2 Adults, 3 Children
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="users icon"></i> 2 Adults, 3 Children
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <div class="content">
-                    <div class="ui fluid label">
-                      <i class="cube icon"></i> 1 Baby Bed
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="cube icon"></i> 1 Baby Bed
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <div class="content">
-                    <div class="ui fluid label">
-                      <i class="food icon"></i> 15 Breakfast
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui fluid label">
+                        <i class="food icon"></i> 15 Breakfast
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <div class="content">
-                    <div class="ui big blue fluid label">
-                      <i class="dollar icon"></i> 2300.00
+                  <div class="item">
+                    <div class="content">
+                      <div class="ui big blue fluid label">
+                        <i class="dollar icon"></i> 2300.00
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="eight wide column">
-              <div class="ui fluid rounded image">
-                <img src="img/Family_1.jpg">
+              <div class="eight wide column">
+                <div class="ui fluid rounded image">
+                  <img src="img/Family_1.jpg">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="ui divider"></div>
+      <div class="ui divider"></div>
 
-    <div class="ui container labeled green icon button modal-close-btn">
-      <i class="check icon"></i>
-      Confirm
+      <div class="ui container labeled green icon button modal-close-btn">
+        <i class="check icon"></i>
+        Confirm
+      </div>
     </div>
   </div>
-</div>
   
   
 <!-- Refund Modal -->
@@ -715,32 +717,34 @@
 </div>
 
   
-<!-- Progress Modal -->
-<div class="ui small modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Payment is in progress automatically.
-  </div>
-  <div class="content">
-    <div class="description">
-      <p>If this window persists, please try again.</p>
-      <p>Thank you for using our hotel.</p>
-    <div class="ui indicating progress">
-      <div class="bar"></div>
+  <!-- Progress Modal -->
+  <div class="ui small modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Payment is in progress automatically.
     </div>
+    <div class="content">
+      <div class="description">
+        <p>If this window persists, please try again.</p>
+        <p>Thank you for using our hotel.</p>
+        <div class="ui indicating progress">
+          <div class="bar"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
   
 
   
   
-<!-- Cancel Modal -->
-<div class="ui cancel modal">
-  <div class="header">Cancel Your Reservation</div>
-  <div class="content">
-    <h3>The below reservation will be canceled.</h3>
-    <div class="ui fluid green card">
+  <!-- Cancel Modal -->
+  <div class="ui cancel modal">
+    <div class="header">Cancel Your Reservation</div>
+    <div class="content">
+      <h3>The below reservation will be canceled.</h3>
+      <div class="ui fluid green card">
         <div class="content">
           <div class="header"> Your Room</div>
           <div class="meta"></div>
@@ -801,13 +805,13 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="actions">
+      <div class="ui button red remove-btn" tabindex="0">Remove</div>
+      <div class="ui button black modal-close-btn" tabindex="1">Cancel</div>
+    </div>
   </div>
-  <div class="ui hidden divider"></div>
-  <div class="actions">
-    <div class="ui button red remove-btn" tabindex="0">Remove</div>
-    <div class="ui button black modal-close-btn" tabindex="1">Cancel</div>
-  </div>
-</div>
 
 </body>
 
