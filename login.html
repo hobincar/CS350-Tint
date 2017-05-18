@@ -13,13 +13,13 @@
   <link rel="stylesheet" type="text/css" href="css/template.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
-  <script href="semantic-ui/semantic.js"></script>
-  <script href="js/template.js"></script>
-  <script href="js/login.js"></script>
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
+  <script src="semantic-ui/semantic.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/login.js"></script>
   <script>
     function validate_email(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,10 +31,14 @@
         $('#email').on('keyup', function() {
           console.log(this.value, validate_email(this.value));
           let is_valid = validate_email(this.value)
-          if (is_valid)
+          if (is_valid) {
             $(".email.error").hide();
-          else
+            $("#email_field").removeClass("error");
+          }
+          else {
             $(".email.error").text("Not a valid email format").show();
+            $("#email_field").addClass("error");
+          }
         });
     });
   </script>
@@ -72,7 +76,7 @@
     </h2>
     <form class="ui large form">
       <div class="ui stacked segment">
-        <div class="field">
+        <div id="email_field" class="field">
           <div class="ui left icon input">
             <i class="mail icon"></i>
             <input id="email" class="ui" type="text" name="email" placeholder="E-mail address">

@@ -138,79 +138,78 @@ crossorigin="anonymous"></script>
 
         <div class="ui divider"></div>
 
-        <form class="ui payment form">
-          <h4 class="ui dividing header">Billing Information</h4>
-          <div class="field">
-            <label>Card Type</label>
-            <div class="ui selection dropdown">
-              <input type="hidden" name="card[type]">
-              <div class="default text">Type</div>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <div class="item" data-value="visa">
-                  <i class="visa icon"></i>
-                  Visa
-                </div>
-                <div class="item" data-value="amex">
-                  <i class="amex icon"></i>
-                  American Express
-                </div>
-                <div class="item" data-value="discover">
-                  <i class="discover icon"></i>
-                  Discover
-                </div>
+      <form class="ui step4 form segment">
+        <h4 class="ui dividing header">Billing Information</h4>
+        <div class="field required">
+          <label>Card Type</label>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="card[type]">
+            <div class="default text">Type</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" data-value="visa">
+                <i class="visa icon"></i>
+                Visa
+              </div>
+              <div class="item" data-value="amex">
+                <i class="amex icon"></i>
+                American Express
+              </div>
+              <div class="item" data-value="discover">
+                <i class="discover icon"></i>
+                Discover
               </div>
             </div>
           </div>
-          <div class="fields">
-            <div class="seven wide field">
-              <label>Card Number</label>
-              <input type="number" name="card[number]" maxlength="16" placeholder="Card #">
-            </div>
-            <div class="three wide field">
-              <label>CVC</label>
-              <input type="number" name="card[cvc]" maxlength="3" placeholder="CVC">
-            </div>
-            <div class="six wide field">
-              <label>Expiration</label>
-              <div class="two fields">
-                <div class="field">
-                  <select class="ui fluid search dropdown" name="card[expire-month]">
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <input type="number" name="card[expire-year]" maxlength="4" placeholder="Year">
-                </div>
+        </div>
+        <div class="fields">
+          <div class="seven wide field required">
+            <label>Card Number</label>
+            <input type="number" name="card[number]" maxlength="16" placeholder="Card #">
+          </div>
+          <div class="three wide field required">
+            <label>CVC</label>
+            <input type="number" name="card[cvc]" maxlength="3" placeholder="CVC">
+          </div>
+          <div class="six wide field required">
+            <label>Expiration</label>
+            <div class="two fields">
+              <div class="field">
+                <select class="ui fluid search dropdown" name="card[expire-month]">
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+              </div>
+              <div class="field required">
+                <input type="number" name="card[expire-year]" maxlength="4" placeholder="Year">
               </div>
             </div>
           </div>
-          <h4 class="ui dividing header">Receipt</h4>
-          <div class="field">
-            <label>Send Receipt To:</label>
-            <div class="ui fluid multiple search selection dropdown">
-              <input type="hidden" name="receipt">
-              <i class="dropdown icon"></i>
-              <div class="default text">Contacts</div>
-              <div class="menu">
-                <div class="item" data-value="Cell Phone" data-text="Cell Phone">
-                  Cell Phone
-                </div>
-                <div class="item" data-value="E-mail" data-text="E-mail">
-                  E-mail
-                </div>
+        </div>
+         <h4 class="ui dividing header">Receipt</h4>
+         <div id="receipt_field" class="field">
+          <label>Send Receipt To:</label>
+          <div class="ui fluid multiple search selection dropdown">
+            <input type="hidden" name="receipt">
+            <i class="dropdown icon"></i>
+            <div class="default text">Contacts</div>
+            <div class="menu">
+              <div class="item" data-value="Cell Phone" data-text="Cell Phone">
+                Cell Phone
+              </div>
+              <div class="item" data-value="E-mail" data-text="E-mail">
+                E-mail
               </div>
             </div>
           </div>
@@ -222,25 +221,14 @@ crossorigin="anonymous"></script>
               </div>
             </div>
           </div>
-          <div class="ui positive fluid button" id="payment_button" tabindex="0">
-            Pay for $2557.50
-          </div>
-          <div class="ui error message"></div>
-        </form>
-        <script type="text/javascript">
-          $('ui.payment.form')
-          .form({
-            fields: {
-              card[number]     : 'empty',
-              gender   : 'empty',
-              username : 'empty',
-              password : ['minLength[6]', 'empty'],
-              skills   : ['minCount[2]', 'empty'],
-              terms    : 'checked'
-            }
-          })
-          ;
-        </script>
+        </div>
+        <div class="ui positive submit fluid button" id="payment_button" tabindex="0">
+          Pay for $2557.50
+        </div>
+        <div class="ui error message"></div>
+      </form>
+
+      <div class="ui divider"></div>
 
         <div class="ui divider"></div>
 
