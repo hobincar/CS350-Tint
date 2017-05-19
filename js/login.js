@@ -20,10 +20,10 @@ $(document)
     $.ajax({
       type: 'POST',
       url: 'login.php',
-      data: JSON.stringify({
+      data: {
         email: $(this).find('[name=email]').val(),
         password: $(this).find('[name=password]').val(),
-      }),
+      },
       onSuccess: (res) => {
         console.log(`onSuccess: res: ${res}`);
         if (res['success'] == 0)
