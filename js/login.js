@@ -29,8 +29,24 @@ $(document)
       console.log(`done: res: ${res}`);
       if (res['success'] == 0)
         alert('You entered incorrect ID or Password');
-      else if (res['success'] == 1)
-        window.location.href = "login.php";
+      else if (res['success'] == 1) {
+        $('body').append(
+          $("<form/>")
+            .attr('id', 'login-form')
+            .attr('method', 'POST')
+            .attr('action', 'login.php')
+            .attr('hidden', 'hidden')
+            .append($("<input/>")
+                    .attr('hidden', 'hidden')
+                    .attr("name", "email")
+                    .attr("value", $(this).find('[name=email]').val()))
+            .append($("<input/>")
+                    .attr('hidden', 'hidden')
+                    .attr("name", "password")
+                    .attr("value", $(this).find('[name=password]').val()))
+        );
+        $('#login-form').submit();
+      }
     })
     .fail((res) => {
       console.log(`fail: res: ${res}`);
