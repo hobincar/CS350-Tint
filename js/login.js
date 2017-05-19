@@ -32,7 +32,7 @@ $(document)
       else if (res['success'] == 1) {
         $('body').append(
           $("<form/>")
-            .attr('id', 'login-form')
+            .attr('id', 'login-form2')
             .attr('method', 'POST')
             .attr('action', 'login.php')
             .attr('hidden', 'hidden')
@@ -45,7 +45,7 @@ $(document)
                     .attr("name", "password")
                     .attr("value", $(this).find('[name=password]').val()))
         );
-        $('#login-form').submit();
+        $('#login-form2').submit();
       }
     })
     .fail((res) => {
