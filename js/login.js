@@ -13,10 +13,6 @@ $(document)
         ]
       },
     },
-    onSuccess: (event) => {
-      event.preventDefault();
-      window.location.href = "index.html"
-    }
   });
   
   $('#login-form').on('submit', function(event) {
@@ -38,7 +34,7 @@ $(document)
         alert('You entered incorrect id or password');
       },
       
-    })
-  })
+    });
+  });
 })
 ;
