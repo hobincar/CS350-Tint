@@ -107,7 +107,7 @@ if !isset($_SESSION['uid']){
             <label>How many Rooms? (-3)</label>
             <div class="ui floating dropdown labeled search icon fluid button">
               <i class="cubes icon"></i>
-              <span class="text"> Rooms </span>
+              <span class="text"> 1 Room </span>
               <div class="menu">
                 <div class="item">1 Room</div>
                 <div class="item">2 Rooms</div>
@@ -119,7 +119,7 @@ if !isset($_SESSION['uid']){
             <label>How many Adults? (18+)</label>
             <div class="ui floating dropdown labeled search icon fluid button">
               <i class="users icon"></i>
-              <span class="text"> Adults </span>
+              <span class="text"> 1 Adult </span>
               <div class="menu">
                 <div class="item">1 Adult</div>
                 <div class="item">2 Adults</div>
@@ -134,8 +134,9 @@ if !isset($_SESSION['uid']){
             <label>How many Children?  (-17)</label>
             <div class="ui floating dropdown labeled search icon fluid button">
               <i class="child icon"></i>
-              <span class="text"> Children </span>
+              <span class="text"> 0 Children </span>
               <div class="menu">
+                <div class="item">0 Children</div>
                 <div class="item">1 Child</div>
                 <div class="item">2 Children</div>
                 <div class="item">3 Children</div>
@@ -152,8 +153,9 @@ if !isset($_SESSION['uid']){
             <label>Will you use a coupon? (optional)</label>
             <div class="ui floating dropdown labeled search icon fluid button">
               <i class="money icon"></i>
-              <span class="text"> Your Coupons </span>
+              <span class="text"> Nothing </span>
               <div class="menu">
+                <div class="item">Nothing</div>
                 <div class="item">20% Discount Coupon</div>
               </div>
             </div>
