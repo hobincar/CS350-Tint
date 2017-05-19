@@ -25,7 +25,7 @@ if (!isset($_SESSION["uid"])){
 
     <div class="ui middle aligned stackable equal height grid container">
       <div class="fourteen wide column">
-        <div class="wide ui reservation form segment column">
+        <form class="wide ui reservation form segment column">
           <div class="two fields">
             <div class="field">
               <label>When will you check in?</label>
@@ -108,12 +108,9 @@ if (!isset($_SESSION["uid"])){
               </div>
             </div>
           </div>
-
-        </div>
-
-      </div>
-      <div class="two wide stretched column" >
+          
         <input value="Reserve" class="ui right blue fluid button"/>
+        </form>
       </div>
     </div>
 
