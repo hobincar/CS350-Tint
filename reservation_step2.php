@@ -39,7 +39,7 @@ crossorigin="anonymous"></script>
           <a class="item" href="reservation_step1.php">Reservation</a>
           <a class="item" href="#information">Information</a>
           <div class="right item">
-            <a class="ui inverted button" href="mypage.html">My Page</a>
+            <a class="ui inverted button" href="mypage.php">My Page</a>
             <a class="ui inverted button" href="index.html">Log Out</a>
           </div>
         </div>

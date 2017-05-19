@@ -11,38 +11,6 @@ if ($user->is_admin()){
 	require_once("./template/customer_header.html");
 }
 ?>
-<!--
-<!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script src="semantic-ui/semantic.min.js"></script>
-<html>
-<head>
-  <title>Reservation</title>
-</head>
-<body>
-
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment top" >
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="item">Home</a>
-        <a class="active item" href="reservation_step1.php">Reservation</a>
-        <a class="item" href="#information">Information</a>
-        <div class="right item">
-          <a class="ui inverted button" href="mypage.html">My Page</a>
-          <a class="ui inverted button" href="logout.php">Log Out</a>
-        </div>
-      </div>
-    </div>
-  </div>
--->
   <!-- Body Start -->
   <div class="ui grid">
 
