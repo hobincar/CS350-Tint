@@ -152,7 +152,26 @@ crossorigin="anonymous"></script>
     </div>
 
   </div>
+  
+  <!-- Coupon Modal -->
+  <div class="ui small coupon modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Your 5th reservation! Here's a discount coupon for you!
+    </div>
+    <div class="ui segment content center aligned">
+      <img class="ui segment" width="50%" height="25%" src="img/coupon.png"/>
+      <h4>15% Discount Coupon</h4>
+    </div>
+  </div>
+  
 <script src="js/reservation.js"></script>
+<script>
+  $(document)
+    .ready(() => {
+      $(".ui.coupon.modal").modal('show');
+  })
+</script>
 </body>
 
 </html>
