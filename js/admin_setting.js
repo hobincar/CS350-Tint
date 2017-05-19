@@ -84,6 +84,9 @@ $(document)
         onSuccess: (event) => {
           event.preventDefault();
           $('#period_modal').modal('show');
+          let start_date = $('input[name=start_date]').val();
+          let end_date = $('input[name=end_date]').val();
+          $('.coupon-blocked-text > h3').text(`Current coupon-blocked period: ${start_date} ~ ${end_date}`);
         }
       });
   
