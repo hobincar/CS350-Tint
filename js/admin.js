@@ -52,13 +52,13 @@ $(document)
       if (text == "Request Type".toLocaleLowerCase())
         alert('Please select request type');
       else if (text == "Get a Reservation Information".toLocaleLowerCase())
-        window.location.href = 'mypage.html';
+        window.location.href = 'mypage.php';
       else if (text == "Make a Reservation".toLocaleLowerCase())
         window.location.href = 'reservation_step1.php';
       else if (text == "Edit a Reservation".toLocaleLowerCase())
-        window.location.href = 'mypage.html';
+        window.location.href = 'mypage.php';
       else if (text == "Cancel a Reservation".toLocaleLowerCase())
-        window.location.href = 'mypage.html';
+        window.location.href = 'mypage.php';
       else
         console.log(text);
     }
