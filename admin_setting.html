@@ -148,7 +148,7 @@
               </div>
             </div>
 
-            <div class="ui form tab segment" data-tab="second">
+            <form class="ui coupon-blocked-period form tab segment" data-tab="second">
               <div class="two fields">
                 <div class="field">
                   <label>Set Period Start</label>
@@ -157,7 +157,7 @@
                       <i class="calendar icon"></i>
                       Start
                     </div>
-                    <input type="date" placeholder="Input date">
+                    <input type="date" name="start_date" placeholder="Input date">
                   </div>
                 </div>
                 <div class="field">
@@ -167,15 +167,13 @@
                       <i class="calendar icon"></i>
                       End
                     </div>
-                    <input type="date" placeholder="Input date">
+                    <input type="date" name="end_date" placeholder="Input date">
                   </div>
                 </div>
               </div>
-              <button class="ui fluid button" id="peirod">
-                Set Period
-              </button>
-            </div>
-            <div class="ui small modal" id="peirod_modal">
+              <input type="submit" value="Set Period" class="ui fluid button" id="period"/>
+            </form>
+            <div class="ui small modal" id="period_modal">
               <div class="header">Period is Set</div>
               <div class="content">
                 <p>Current Period is 2017/08/01 ~ 2017/8/31</p>
@@ -287,17 +285,6 @@
 
       $('.checkbox').checkbox('attach events', '#noshow_all', 'check');
 
-      $('#noshow').on('click', function() {
-        $('#noshow_modal')
-        .modal('show')
-        ;
-      });
-
-      $('#peirod').on('click', function() {
-        $('#peirod_modal')
-        .modal('show')
-        ;
-      });
     })
   ;
 </script>

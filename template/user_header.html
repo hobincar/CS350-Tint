@@ -11,46 +11,27 @@
 
 		<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="css/template.css">
-		<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT Serif">
-		<script
-					 src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
 		<script src="semantic-ui/semantic.min.js"></script>
 		<script href="js/template.js"></script>
 		<script>
-$(document)
-	.ready(function() {
+          $(document)
+              .ready(function() {
+                  $('.ui .dropdown').dropdown();
+                  // create sidebar and attach to menu open
 
-		// fix menu when passed
-		$('.masthead')
-			.visibility({
-				once: false,
-				onBottomPassed: function() {
-					$('.fixed.menu').transition('fade in');
-				},
-				onBottomPassedReverse: function() {
-					$('.fixed.menu').transition('fade out');
-				}
-			})
-		;
-		$('.ui .dropdown').dropdown();
-		// create sidebar and attach to menu open
-		$('.ui.sidebar')
-			.sidebar('attach events', '.toc.item')
-			;
-
-		// active bar change
-		$('.item').on('click', function() {
-			console.log('a')
-				$('.item').siblings().removeClass('active');
-			$(this).addClass('active');
-			console.log($(this).text());
-		});
-
-	})
-;
+                  // active bar change
+                  $('.item').on('click', function() {
+                      console.log('a')
+                          $('.item').siblings().removeClass('active');
+                      $(this).addClass('active');
+                      console.log($(this).text());
+                  });
+              })
+          ;
 		</script>
 	</head>
 	<body class="pushable">
@@ -58,9 +39,9 @@ $(document)
 		<!-- Following Menu -->
 		<div class="ui large top fixed menu transition hidden" style="display: flex !important;">
 			<div class="ui container">
-				<a class="active item" href="#">Home</a>
+				<a class="active item" href="index.php">Home</a>
 				<a class="item" href="reservation_step1.html">Reservation</a>
-				<a class="item" href="index.html#information">Information</a>
+				<a class="item" href="index.php#information">Information</a>
 				<div class="right menu">
 					<div class="item">
 						<a class="ui button">Log in</a>
