@@ -1,3 +1,10 @@
+<?php
+require_once("./lib/User.php");
+if !isset($_SESSION['uid']){
+        header('Location: http://www.starlit.kr/login.html');
+}
+?>
+
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
 <script
@@ -29,7 +36,7 @@ crossorigin="anonymous"></script>
             <i class="sidebar icon"></i>
           </a>
           <a class="active item">Home</a>
-          <a class="item" href="reservation_step1.html">Reservation</a>
+          <a class="item" href="reservation_step1.php">Reservation</a>
           <a class="item" href="#information">Information</a>
           <div class="right item">
             <a class="ui inverted button" href="mypage.html">My Page</a>
@@ -235,7 +242,7 @@ crossorigin="anonymous"></script>
 
         <div class="ui divider"></div>
 
-      <button class="ui left floated labeled red icon negative button" onclick="window.location.href='reservation_step1.html'">
+      <button class="ui left floated labeled red icon negative button" onclick="window.location.href='reservation_step1.php'">
         <i class="left arrow icon"></i>
         Previous
       </button>
