@@ -111,7 +111,7 @@ if (!isset($_SESSION["uid"])){
 
       </div>
       <div class="two wide stretched column" >
-        <button class="ui right blue fluid button" onclick = "location.href = 'reservation_step2.html' ">
+        <button class="ui right blue fluid button" onclick = "location.href = 'reservation_step2.php' ">
           Reserve
         </button>
       </div>
