@@ -30,8 +30,6 @@ class User
 		$connect->query("SELECT email, name, phone_number, type FROM Users WHERE email='".$email."' and password='".$password."';");
 		if($connect->result){
 			if (mysqli_num_rows($connect->result)==0){
-				print("login failed!");
-				print("redirected to login page!");
 				return false;
 			}
 			$result = $connect->fetch();
@@ -42,8 +40,6 @@ class User
 			$_SESSION["uid"] = array($this->email,$this->name,$this->phone_number,$this->type);
 			return true;
 		} else {
-			print("login failed!");
-			print("redirected to login page!");
 			return false;
 
 		}
@@ -73,7 +69,6 @@ class User
 		$connect->connect();
 		$query="INSERT INTO Users ( email ,  password , name , phone_number , type ) VALUES ('".$email."','".$password."','".$name."','".$phone_number."',".$type.")";
 		$connect->query($query);
-		print($query);
 
 	}
 }
