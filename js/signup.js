@@ -1,36 +1,61 @@
 $(document)
 .ready(function() {
-  $('.ui.form')
+  $('.ui.signup.form')
     .form({
       fields: {
         email: {
-          identifier  : 'email',
+          identifier: 'email',
           rules: [
             {
-              type   : 'empty',
-              prompt : 'Please enter your e-mail'
-            },
-            {
-              type   : 'email',
-              prompt : 'Please enter a valid e-mail'
+              type   : 'regExp',
+              value : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             }
           ]
         },
-        password: {
-          identifier  : 'password',
+        password1: {
+          identifier: 'password1',
+          rules: [
+            {
+              type   : 'minLength[8]',
+              prompt : 'The passwords should be longer than 8 characters'
+            },
+            {
+              type   : 'empty',
+              prompt : 'Please enter a password'
+            }
+          ]
+        },
+        password2: {
+          identifier: 'password2',
+          rules: [
+            {
+              type   : 'match[password1]',
+              prompt : 'The passwords should be same'
+            }
+          ]
+        },
+        name: {
+          identifier: 'name',
           rules: [
             {
               type   : 'empty',
-              prompt : 'Please enter your password'
-            },
-            {
-              type   : 'length[6]',
-              prompt : 'Your password must be at least 6 characters'
+              prompt : 'Please select a name'
             }
           ]
-        }
+        },
+        phone_number: {
+          identifier: 'phone-number',
+          rules: [
+            {
+              type   : 'regExp',
+              value : /^\d{3}-\d{3,4}-\d{4}$/
+            }
+          ]
+        },
+      },
+      onSuccess: (event) => {
+        event.preventDefault();
+        $('.ui.signup-complete.modal').modal('show');
       }
-    })
-  ;
-})
-;
+    });
+});

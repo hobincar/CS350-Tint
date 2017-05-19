@@ -19,22 +19,96 @@ $(document)
       progressRefundModal()
     });
 
-  validation_w_receipt();
+    validation_w_receipt();
 
+    $('input[type=checkbox]').on('change', function(event) {
+      console.log($(this).parent().hasClass('checked'))
+      if ($(this).parent().hasClass('checked'))
+        validation_w_receipt();
+      else {
+        validation_wo_receipt();
+        $('#receipt_field').removeClass('error');
+      }
+    });
 
-  $('input[type=checkbox]').on('change', function(event) {
-    console.log($(this).parent().hasClass('checked'))
-    if ($(this).parent().hasClass('checked'))
-      validation_w_receipt();
-    else {
-      validation_wo_receipt();
-      $('#receipt_field').removeClass('error');
-    }
-  });
+    $('.menu .item').tab();
   
-  $('.menu .item').tab();
-;
-});
+    $('#modify-info-btn').on('click', () => $('.ui.modify-info.modal').modal('show'));
+  
+    
+  $('.ui.modify-info.form')
+    .form({
+      fields: {
+        email: {
+          identifier: 'email',
+          rules: [
+            {
+              type   : 'regExp',
+              value : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            }
+          ]
+        },
+        old_password: {
+          identifier: 'old_password',
+          rules: [
+            {
+              type   : 'empty',
+              prompt : 'Please enter the old password'
+            },
+          ]
+        },
+        password1: {
+          identifier: 'password1',
+          rules: [
+            {
+              type   : 'regExp',
+              value : /(^$|^.{8,}$)/,
+              prompt: 'Password should be longer than 7 characters'
+            },
+            {
+              type   : 'different[old_password]',
+              prompt : 'The old and new passwords should be different'
+            }
+          ]
+        },
+        password2: {
+          identifier: 'password2',
+          rules: [
+            {
+              type   : 'match[password1]',
+              prompt : 'The passwords should be same'
+            }
+          ]
+        },
+        name: {
+          identifier: 'name',
+          rules: [
+            {
+              type   : 'empty',
+              prompt : 'Please select a name'
+            }
+          ]
+        },
+        phone_number: {
+          identifier: 'phone-number',
+          rules: [
+            {
+              type   : 'regExp',
+              value : /^\d{3}-\d{3,4}-\d{4}$/
+            }
+          ]
+        },
+      },
+      onSuccess: (event) => {
+        event.preventDefault();
+        $('#info-email').text(`Email: ${$("#email").val()}`);
+        $('#info-name').text(`Name: ${$("#name").val()}`);
+        $('#info-phone-number').text(`Phone Number: ${$("#phone_number").val()}`);
+        $('.ui.modify-info.modal').modal('hide');
+      }
+    });
+  
+  });
 
 
 function progressPayModal() {

@@ -74,8 +74,7 @@ $(document)
       }
     });
   
-    validation_step4_w_receipt()
-  
+  validation_step4_w_receipt();
 })
 ;
 
