@@ -17,7 +17,28 @@ $(document)
       event.preventDefault();
       window.location.href = "index.html"
     }
+  });
+  
+  $('#login-form').on('submit', function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: 'login.php',
+      data: JSON.stringify({
+        email: $(this).find('[name=email]').val(),
+        password: $(this).find('[name=password]').val(),
+      }),
+      onSuccess: (res) => {
+        console.log(`onSuccess: res: ${res}`);
+        if (res['success'] == 0)
+          alert('You entered incorrect id or password');
+      },
+      onError: (res) => {
+        console.log(`onError: res: ${res}`);
+        alert('You entered incorrect id or password');
+      },
+      
+    })
   })
-;
 })
 ;
