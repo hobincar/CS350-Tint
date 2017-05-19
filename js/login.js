@@ -19,22 +19,22 @@ $(document)
     event.preventDefault();
     $.ajax({
       type: 'POST',
-      url: 'login.php',
+      url: 'verify.php',
       data: {
         email: $(this).find('[name=email]').val(),
         password: $(this).find('[name=password]').val(),
       },
-      onSuccess: (res) => {
-        console.log(`onSuccess: res: ${res}`);
-        if (res['success'] == 0)
-          alert('You entered incorrect id or password');
-      },
-      onError: (res) => {
-        console.log(`onError: res: ${res}`);
+    })
+    .done((res) => {
+      console.log(`done: res: ${res}`);
+      if (res['success'] == 0)
         alert('You entered incorrect id or password');
-      },
-      
-    });
+      else if (res['success'] == 1)
+        window.href.location = "login.php";
+    })
+    .fail((res) => {
+      console.log(`fail: res: ${res}`);
+    })
   });
 })
 ;
