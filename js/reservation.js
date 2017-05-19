@@ -75,6 +75,13 @@ $(document)
     });
   
   validation_step4_w_receipt();
+  
+  $('#next_btn').on('click', () => {
+    if ($('.active.button').length > 0)
+      window.location.href = 'reservation_step3.php';
+    else
+      alert('Please choose at least one room');
+  })
 })
 ;
 
