@@ -25,7 +25,7 @@ if (!isset($_SESSION["uid"])){
 
     <div class="ui middle aligned stackable equal height grid container">
       <div class="fourteen wide column">
-        <div class="wide ui form segment column">
+        <div class="wide ui reservation form segment column">
           <div class="two fields">
             <div class="field">
               <label>When will you check in?</label>
@@ -54,7 +54,7 @@ if (!isset($_SESSION["uid"])){
               <!-- <input placeholder="Up to 5" type="number"> -->
               <div class="ui floating dropdown labeled search icon fluid button">
                 <i class="cubes icon"></i>
-                <span class="text"> Rooms </span>
+                <span class="text"> 1 Room </span>
                 <div class="menu">
                   <div class="item">1 Room</div>
                   <div class="item">2 Rooms</div>
@@ -66,7 +66,7 @@ if (!isset($_SESSION["uid"])){
               <label>How many Adults? (18+)</label>
               <div class="ui floating dropdown labeled search icon fluid button">
                 <i class="users icon"></i>
-                <span class="text"> Adults </span>
+                <span class="text"> 1 Adult </span>
                 <div class="menu">
                   <div class="item">1 Adult</div>
                   <div class="item">2 Adults</div>
@@ -81,8 +81,9 @@ if (!isset($_SESSION["uid"])){
               <label>How many Children?  (-17)</label>
               <div class="ui floating dropdown labeled search icon fluid button">
                 <i class="child icon"></i>
-                <span class="text"> Children </span>
+                <span class="text"> 0 Children </span>
                 <div class="menu">
+                  <div class="item">0 Children</div>
                   <div class="item">1 Child</div>
                   <div class="item">2 Children</div>
                   <div class="item">3 Children</div>
@@ -99,8 +100,9 @@ if (!isset($_SESSION["uid"])){
               <label>Will you use a coupon? (optional)</label>
               <div class="ui floating dropdown labeled search icon fluid button">
                 <i class="money icon"></i>
-                <span class="text"> Your Coupons </span>
+                <span class="text"> Nothing </span>
                 <div class="menu">
+                  <div class="item">Nothing</div>
                   <div class="item">20% Discount Coupon</div>
                 </div>
               </div>
@@ -111,9 +113,7 @@ if (!isset($_SESSION["uid"])){
 
       </div>
       <div class="two wide stretched column" >
-        <button class="ui right blue fluid button" onclick = "location.href = 'reservation_step2.php' ">
-          Reserve
-        </button>
+        <input value="Reserve" class="ui right blue fluid button"/>
       </div>
     </div>
 
@@ -213,7 +213,41 @@ if (!isset($_SESSION["uid"])){
   </div>
 </div>
 
-
+<script>
+  $(document)
+    .ready( () => {
+      $('.ui.dropdown').dropdown();
+    
+      
+    $('.ui.reservation.form')
+      .form({
+        fields: {
+          start_date: {
+            identifier: 'start_date',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please select start date'
+              }
+            ]
+          },
+          end_date: {
+            identifier: 'end_date',
+            rules: [
+              {
+                type : 'empty',
+                prompt: 'Please select start date'
+              }
+            ]
+          },
+        },
+        onSuccess: (event) => {
+          event.preventDefault();
+          location.href = 'reservation_step2.php';
+        }
+      });
+  })
+</script>
 
 
 
