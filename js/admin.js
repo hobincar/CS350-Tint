@@ -22,22 +22,6 @@ $(document)
   $('.ui.dropdown')
   .dropdown()
   ;
-
-  $('.ui .submit.button').on('click', function() {
-    var type = $('.ui.floating.dropdown').dropdown('get value');
-    console.log($('.ui.floating.dropdown').dropdown('get value'));
-
-    if (type === "get a reservation information") {
-
-    } else if (type === "make a reservation") {
-      window.location.href = "reservation_step1.php"
-    } else if (type === "edit a reservation") {
-
-    } else if (type === "cancel a reservation") {
-
-    }
-
-  });
   
   
   $('.ui.manage-customer-reservation.form')
@@ -63,11 +47,10 @@ $(document)
       },
     },
     onSuccess: (event) => {
+      event.preventDefault();
       let text = $('#request-type').text().trim().toLocaleLowerCase()
-      if (text == "Request Type".toLocaleLowerCase()) {
-        event.preventDefault();
+      if (text == "Request Type".toLocaleLowerCase())
         alert('Please select request type');
-      }
       else if (text == "Get a Reservation Information".toLocaleLowerCase())
         window.location.href = 'mypage.html';
       else if (text == "Make a Reservation".toLocaleLowerCase())
