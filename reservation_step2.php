@@ -212,7 +212,7 @@ if ($user->is_admin()){
         <i class="left arrow icon"></i>
         Previous
       </button>
-      <button id="next_btn" class="ui right floated right labeled icon positive button">
+      <button id="next_btn" class="ui right floated right labeled icon positive button" onclick="window.location.href='reservation_step3.php'">
         <i class="right arrow icon"></i>
         Next
       </button>
