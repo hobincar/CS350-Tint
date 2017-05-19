@@ -1,9 +1,17 @@
 <?php
 require_once("./lib/User.php");
-if !isset($_SESSION['uid']){
+if (!isset($_SESSION['uid'])){
 	header('Location: http://www.starlit.kr/login.html');
 }
+$user=new User();
+$user->sign_in_session();
+if ($user->is_admin()){
+	require_once("./template/admin_header.html");
+} else {
+	require_once("./template/customer_header.html");
+}
 ?>
+<!--
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
 <script
@@ -13,12 +21,10 @@ if !isset($_SESSION['uid']){
 <script src="semantic-ui/semantic.min.js"></script>
 <html>
 <head>
-  <!-- Site Properties -->
   <title>Reservation</title>
 </head>
 <body>
 
-<!-- Page Contents -->
 <div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment top" >
     <div class="ui container">
@@ -36,7 +42,7 @@ if !isset($_SESSION['uid']){
       </div>
     </div>
   </div>
-
+-->
   <!-- Body Start -->
   <div class="ui grid">
 
