@@ -28,9 +28,9 @@ $(document)
     .done((res) => {
       console.log(`done: res: ${res}`);
       if (res['success'] == 0)
-        alert('You entered incorrect id or password');
+        alert('You entered incorrect ID or Password');
       else if (res['success'] == 1)
-        window.href.location = "login.php";
+        window.location.href = "login.php";
     })
     .fail((res) => {
       console.log(`fail: res: ${res}`);
