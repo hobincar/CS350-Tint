@@ -92,10 +92,10 @@ if ($user->is_admin()){
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="six wide column">
-                <div class="ui medium rounded image">
-                  <img src="img/Family_1.jpg">
+                <div class="six wide column">
+                  <div class="ui medium rounded image">
+                    <img src="img/Family_1.jpg">
+                  </div>
                 </div>
               </div>
             </div>
