@@ -60,7 +60,7 @@ if ($user->is_admin()){
             <div class="meta"></div>
             <div class="description">
               <div class="ui grid">
-                <div class="eight wide column">
+                <div class="ten wide column">
                   <div class="ui list">
                     <div class="item">
                       <div class="content">
@@ -92,8 +92,8 @@ if ($user->is_admin()){
                     </div>
                   </div>
                 </div>
-                <div class="eight wide column">
-                  <div class="ui medium rounded image">
+                <div class="six wide column">
+                  <div class="ui fluid rounded image">
                     <img src="img/Family_1.jpg">
                   </div>
                 </div>
