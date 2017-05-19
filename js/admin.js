@@ -62,9 +62,11 @@ $(document)
         ]
       },
     },
-    onSuccess: () => {
-      if ($('#request-type').text().trim() == "Request Type")
+    onSuccess: (event) => {
+      if ($('#request-type').text().trim() == "Request Type") {
+        event.preventDefault();
         alert('Please select request type');
+      }
       else if ($('#request-type').text().trim() == "Get a Reservation Information")
         window.location.href = 'mypage.html';
       else if ($('#request-type').text().trim() == "Make a Reservation")
@@ -73,6 +75,8 @@ $(document)
         window.location.href = 'mypage.html';
       else if ($('#request-type').text().trim() == "Cancel a Reservation")
         window.location.href = 'mypage.html';
+      else
+        console.log($('#request-type').text().trim());
     }
   });
 
