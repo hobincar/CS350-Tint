@@ -1,50 +1,16 @@
 <?php
 require_once("./lib/User.php");
-if !isset($_SESSION['uid']){
-        header('Location: http://www.starlit.kr/login.html');
+if (!isset($_SESSION['uid'])){
+	        header('Location: http://www.starlit.kr/login.html');
+}
+$user=new User();
+$user->sign_in_session();
+if ($user->is_admin()){
+        require_once("./template/admin_header.html");
+} else {
+        require_once("./template/customer_header.html");
 }
 ?>
-
-<!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-<script
-src="https://code.jquery.com/jquery-3.1.1.min.js"
-integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-crossorigin="anonymous"></script>
-<script src="semantic-ui/semantic.min.js"></script>
-<html>
-<head>
-  <!-- Site Properties -->
-  <title>Reservation</title>
-  <script>
-    $(document).ready(() => {
-      $("#next_btn").on('click', (event) => {
-        if ($(".button.active").length > 0)
-          location.href = 'reservation_step3.html';
-      });
-    });
-  </script>
-</head>
-<body>
-
-  <!-- Page Contents -->
-  <div class="pusher">
-    <div class="ui inverted vertical masthead center aligned segment top" >
-      <div class="ui container">
-        <div class="ui large secondary inverted pointing menu">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <a class="active item">Home</a>
-          <a class="item" href="reservation_step1.php">Reservation</a>
-          <a class="item" href="#information">Information</a>
-          <div class="right item">
-            <a class="ui inverted button" href="mypage.php">My Page</a>
-            <a class="ui inverted button" href="index.html">Log Out</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Body Start -->
     <div class="ui grid">
