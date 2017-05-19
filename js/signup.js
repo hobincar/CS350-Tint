@@ -53,9 +53,5 @@ $(document)
           ]
         },
       },
-      onSuccess: (event) => {
-        event.preventDefault();
-        $('.ui.signup-complete.modal').modal('show');
-      }
     });
 });
