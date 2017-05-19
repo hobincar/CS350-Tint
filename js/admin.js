@@ -63,20 +63,21 @@ $(document)
       },
     },
     onSuccess: (event) => {
-      if ($('#request-type').text().trim() == "Request Type") {
+      let text = $('#request-type').text().trim().toLocaleLowerCase()
+      if (text == "Request Type".toLocaleLowerCase()) {
         event.preventDefault();
         alert('Please select request type');
       }
-      else if ($('#request-type').text().trim() == "Get a Reservation Information")
+      else if (text == "Get a Reservation Information".toLocaleLowerCase())
         window.location.href = 'mypage.html';
-      else if ($('#request-type').text().trim() == "Make a Reservation")
+      else if (text == "Make a Reservation".toLocaleLowerCase())
         window.location.href = 'reservation_step1.php';
-      else if ($('#request-type').text().trim() == "Edit a Reservation")
+      else if (text == "Edit a Reservation".toLocaleLowerCase())
         window.location.href = 'mypage.html';
-      else if ($('#request-type').text().trim() == "Cancel a Reservation")
+      else if (text == "Cancel a Reservation".toLocaleLowerCase())
         window.location.href = 'mypage.html';
       else
-        console.log($('#request-type').text().trim());
+        console.log(text);
     }
   });
 
