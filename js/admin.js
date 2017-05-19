@@ -30,7 +30,7 @@ $(document)
     if (type === "get a reservation information") {
 
     } else if (type === "make a reservation") {
-      window.location.href = "reservation_step1.html"
+      window.location.href = "reservation_step1.php"
     } else if (type === "edit a reservation") {
 
     } else if (type === "cancel a reservation") {

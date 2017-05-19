@@ -70,7 +70,7 @@ $(document)
       },
       onSuccess: (event) => {
         event.preventDefault();
-        location.href = 'reservation_step2.html';
+        location.href = 'reservation_step2.php';
       }
     });
   
@@ -101,7 +101,7 @@ function progressModal() {
     if($progress.progress('is complete')) {
       clearInterval(window.fakeProgress)
         // go to next page
-      window.location.href = 'reservation_step5.html'
+      window.location.href = 'reservation_step5.php'
     }
   }, 20);
 
